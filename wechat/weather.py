@@ -16,7 +16,7 @@ def getWeather(city):
                    jsonData['HeWeather data service 3.0'][0]['now']['wind']['dir'],
                    jsonData['HeWeather data service 3.0'][0]['now']['wind']['sc'],
                    jsonData['HeWeather data service 3.0'][0]['suggestion']['drsg']['txt']]
-        weather = '''%s,%s,气温%s℃,体感温度%s℃,%s%s级,%s''' % (weather[0], weather[1], weather[2], weather[3], weather[4]
+        weather = '''%s，%s，气温%s℃，体感温度%s℃，%s%s级，%s''' % (weather[0], weather[1], weather[2], weather[3], weather[4]
                                                         , weather[5], weather[6])
         return weather
     except:
