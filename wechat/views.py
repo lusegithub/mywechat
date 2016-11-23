@@ -8,6 +8,7 @@ import hashlib
 
 from wechat.joke import getjoke
 from wechat.reply import replyText
+from wechat.weather import getWeather
 
 
 class WeChat(View):
@@ -57,8 +58,8 @@ class WeChat(View):
         if msgType == 'event':
             event = str_xml.findtext("Event")
             if event == 'subscribe':
-                content = '''啦啦啦～谢谢你来关注我！我能做什么：\n
-                回复段子：我给你讲个段子！'''
+                content = '''啦啦啦～谢谢你来关注我！我能做什么：\n回复段子：我给你讲个段子！\n回复天气+
+                城市名称:获取该城市的天气状况！'''
 
                 r = replyText(fromUser, toUser, content)
         elif msgType == 'text':
@@ -67,6 +68,9 @@ class WeChat(View):
                 jokes = getjoke()
                 index = random.randint(0, len(jokes) - 1)
                 replyContent = jokes[index]
+                r = replyText(fromUser, toUser, replyContent)
+            elif content[0:2] == '天气':
+                replyContent = getWeather(content[3:])
                 r = replyText(fromUser, toUser, replyContent)
 
             else:

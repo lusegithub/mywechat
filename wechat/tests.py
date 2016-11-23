@@ -1,11 +1,10 @@
-import random
-
 from django.test import TestCase
 
 # Create your tests here.
-from wechat.joke import getjoke
+from wechat.weather import getWeather
 
 if __name__ == '__main__':
-    jokes = getjoke()
-    index = random.randint(0, len(jokes)-1)
-    print(jokes[index])
+    content = '天+广州'
+    if content[0:2] == '天气':
+        s = getWeather(content[3:])
+        print(s)
