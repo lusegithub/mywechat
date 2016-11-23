@@ -6,5 +6,6 @@ from django.test import TestCase
 from wechat.joke import getjoke
 
 if __name__ == '__main__':
-    replycontent = '其他功能正在努力开发中'
-    print(type(replycontent))
+    jokes = getjoke()
+    index = random.randint(0, len(jokes)-1)
+    print(jokes[index])
