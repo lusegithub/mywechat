@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b4db6518-3825-44d1-80a9-8cc23d485d5c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wechat/tests.py" afterPath="$PROJECT_DIR$/wechat/tests.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wechat/views.py" afterPath="$PROJECT_DIR$/wechat/views.py" />
     </list>
     <ignored path="mywechat.iws" />
@@ -54,8 +53,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wechat/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
-              <caret line="67" column="34" selection-start-line="67" selection-start-column="34" selection-end-line="67" selection-end-column="34" />
+            <state relative-caret-position="145">
+              <caret line="64" column="31" selection-start-line="64" selection-start-column="31" selection-end-line="64" selection-end-column="31" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
                 <element signature="e#462#514#0" expanded="false" />
@@ -655,8 +654,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/wechat/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="67" column="34" selection-start-line="67" selection-start-column="34" selection-end-line="67" selection-end-column="34" />
+        <state relative-caret-position="145">
+          <caret line="64" column="31" selection-start-line="64" selection-start-column="31" selection-end-line="64" selection-end-column="31" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
             <element signature="e#462#514#0" expanded="false" />

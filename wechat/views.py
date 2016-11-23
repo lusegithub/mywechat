@@ -63,8 +63,6 @@ class WeChat(View):
         elif msgType == 'text':
             content = str_xml.find('Content').text
             if content == '段子':
-                jokes = getjoke()
-                index = random.randint(0, len(jokes)-1)
                 replyContent = '段子'
                 r = replyText(fromUser, toUser, replyContent)
 
