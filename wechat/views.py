@@ -57,7 +57,8 @@ class WeChat(View):
         if msgType == 'event':
             event = str_xml.findtext("Event")
             if event == 'subscribe':
-                content = '欢迎关注，当然你也可以来调戏我！'
+                content = '''啦啦啦～谢谢你来关注我！我能做什么：\n
+                回复段子：我给你讲个段子！'''
 
                 r = replyText(fromUser, toUser, content)
         elif msgType == 'text':
