@@ -6,4 +6,5 @@ from django.test import TestCase
 from wechat.joke import getjoke
 
 if __name__ == '__main__':
-    print(random.randint(0, 10))
+    replycontent = '其他功能正在努力开发中'
+    print(type(replycontent))
