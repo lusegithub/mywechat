@@ -1,10 +1,12 @@
+import random
+
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.views.generic.base import View
 from xml.etree import ElementTree as ET
-import time
 import hashlib
 
+from wechat.joke import getjoke
 from wechat.reply import replyText
 
 
@@ -55,17 +57,21 @@ class WeChat(View):
         if msgType == 'event':
             event = str_xml.findtext("Event")
             if event == 'subscribe':
-                # 这里获取当前时间的秒数，time.time()取得的数字是浮点数，所以有了下面的操作
-                nowtime = str(int(time.time()))
                 content = '欢迎关注，当然你也可以来调戏我！'
 
-                r = replyText(fromUser, toUser, nowtime, content)
+                r = replyText(fromUser, toUser, content)
         elif msgType == 'text':
-            content = '正在努力开发中'
-            # 这里获取当前时间的秒数，time.time()取得的数字是浮点数，所以有了下面的操作
-            nowtime = str(int(time.time()))
+            content = str_xml.find('Content').text
+            if content == '段子':
+                jokes = getjoke()
+                index = random.randint(0, len(jokes))
+                replyContent = jokes[index]
+                r = replyText(fromUser, toUser, replyContent)
 
-            r = replyText(fromUser, toUser, nowtime, content)
+            else:
+                replycontent = '其他功能正在努力开发中'
+
+                r = replyText(fromUser, toUser, replycontent)
         else:
             return ''
 
